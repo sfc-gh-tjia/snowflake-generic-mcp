@@ -196,7 +196,3 @@ python snowflake_mcp_server.py
 ## License
 
 MIT License - see [LICENSE](LICENSE) file for details.
-
----
-
-**Note**: This project is not officially affiliated with Snowflake Inc. or Anthropic. 
