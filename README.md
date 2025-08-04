@@ -1,18 +1,19 @@
 # Snowflake MCP Server
 
-A secure [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server for executing SQL queries against Snowflake. This server enables AI assistants like Claude and Cursor to interact with your Snowflake data warehouse safely and efficiently.
+A secure [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server that provides AI assistants with safe, efficient access to your Snowflake data warehouse. Execute SQL queries, analyze data, and get insights through natural language interactions.
 
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Features
+## Key Features
 
-- 🔐 **Multiple Authentication Methods**: Password, private key, and SSO authentication
-- 🛡️ **Secure Configuration**: Environment-based configuration with no hard-coded credentials
-- ⚡ **Performance Optimized**: Configurable row limits and efficient query execution
-- 🔍 **Comprehensive Error Handling**: Detailed error messages with troubleshooting tips
-- 📊 **Rich Output Formatting**: Well-formatted query results with metadata
-- 🏗️ **MCP Compliant**: Full compatibility with Claude Desktop and Cursor
+- 🔐 **Multiple Authentication**: Password, private key, and SSO support
+- 🛡️ **Security First**: Environment-based config, no hard-coded credentials
+- ⚡ **Performance Optimized**: Configurable limits and efficient query execution  
+- 🔍 **Smart Error Handling**: Detailed messages with troubleshooting guidance
+- 📊 **Rich Query Results**: Formatted tables with metadata and row counts
+- 🧠 **AI-Ready**: Natural language to SQL through MCP protocol
+- 🏗️ **Universal Compatibility**: Works with any MCP-compatible AI client
 
 ## Quick Start
 
@@ -83,9 +84,12 @@ ALTER USER your_username SET RSA_PUBLIC_KEY='your-public-key-content';
 
 ## Claude Desktop Integration
 
-Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_desktop_config.json`):
+Connect the MCP server to your AI assistant for natural language database interactions.
 
-**Method 1: Using uv (Recommended)**
+### Claude Desktop
+
+Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
+
 ```json
 {
   "mcpServers": {
@@ -97,78 +101,41 @@ Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_
 }
 ```
 
-**Method 2: Direct Python**
+### Cursor
+
+**Option 1**: Project-specific in Cursor Settings → Tools & Integration → MCP tools  
+**Option 2**: Global config in `~/.cursor/mcp.json`
+
 ```json
 {
   "mcpServers": {
     "snowflake": {
-      "command": "/path/to/your/project/venv/bin/python",
-      "args": ["/path/to/your/project/snowflake_mcp_server.py"]
+      "command": "/opt/homebrew/bin/uv", 
+      "args": ["--directory", "/absolute/path/to/your/project", "run", "snowflake_mcp_server.py"]
     }
   }
 }
 ```
 
-Set environment variables in your shell profile (`~/.zshrc` or `~/.bash_profile`):
-```bash
-export SNOWFLAKE_ACCOUNT="your-account"
-export SNOWFLAKE_USERNAME="your-username"
-export SNOWFLAKE_PASSWORD="your-password"  # or private key variables
-```
+## Example Usage
 
-Restart Claude Desktop and verify connection with the 🔌 icon.
-
-## Cursor Integration
-
-The server integrates with [Cursor](https://docs.cursor.com/en/context/mcp) for AI-powered database operations in your IDE.
-
-**Project Configuration (Recommended)**
-
-Create `.cursor/mcp.json` in your project root:
-```json
-{
-  "mcpServers": {
-    "snowflake": {
-      "command": "/path/to/your/project/venv/bin/python",
-      "args": ["/path/to/your/project/snowflake_mcp_server.py"],
-      "env": {
-        "SNOWFLAKE_ACCOUNT": "your-account",
-        "SNOWFLAKE_USERNAME": "your-username",
-        "SNOWFLAKE_PASSWORD": "your-password"
-      }
-    }
-  }
-}
-```
-
-**Global Configuration**
-
-Create `~/.cursor/mcp.json` for system-wide access and set environment variables in your shell profile.
-
-### Usage in Cursor
-
-The Composer Agent automatically detects MCP tools. Example prompts:
-```
-"What's the schema of our users table?"
-"Show me sales data for the last quarter"
-"Find customers with orders over $10,000"
-```
-
-**Features:**
-- Tool approval/auto-run modes
-- Expandable tool responses
-- Error handling with suggestions
-- Multi-step operations
-
-## Example Prompts
+Once connected, you can interact with your Snowflake data using natural language:
 
 ```
-"Show me the top 10 customers by revenue"
 "What tables are available in my database?"
-"Describe the schema of the ORDERS table"
-"Count records created this month"
+"Show me the schema of the users table"
+"Find all customers who made purchases this month"
+"Analyze sales trends for Q4"
 "Help me optimize this slow query"
+"Count records in each table"
+"Show me the top 10 customers by revenue"
 ```
+
+The server handles:
+- **Query execution** with proper formatting and metadata
+- **Error handling** with helpful troubleshooting suggestions  
+- **Security logging** for dangerous operations
+- **Performance limits** to prevent resource exhaustion
 
 ## Security Best Practices
 
@@ -225,17 +192,6 @@ python snowflake_mcp_server.py
 **Client Logs:**
 - Claude Desktop: `~/Library/Logs/Claude/mcp*.log`
 - Cursor: Output panel → "MCP Logs"
-
-## Development
-
-```bash
-git clone https://github.com/yourusername/snowflake-mcp-server.git
-cd snowflake-mcp-server
-python -m venv venv
-source venv/bin/activate
-pip install -e ".[dev]"
-pytest tests/
-```
 
 ## License
 
