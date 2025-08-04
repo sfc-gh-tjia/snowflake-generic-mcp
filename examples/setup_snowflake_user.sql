@@ -8,7 +8,7 @@
 
 -- Variables (replace with your actual values)
 SET mcp_username = 'mcp_user';
-SET mcp_password = 'secure_password_123!';
+SET mcp_password = 'change_me_secure_password!';
 SET target_database = 'your_database';
 SET target_schema = 'public';
 SET target_warehouse = 'COMPUTE_WH';
