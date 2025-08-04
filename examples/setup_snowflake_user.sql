@@ -11,7 +11,7 @@ SET mcp_username = 'mcp_user'; # example username for the mcp user: mcp_user
 SET mcp_password = 'change_me_secure_password!'; # example password for the mcp user: change_me_secure_password!
 SET target_database = 'your_database'; # example database for the mcp user: your_database
 SET target_schema = 'your_schema'; # example schema for the mcp user: your_schema
-SET target_warehouse = 'your_warehouse';
+SET target_warehouse = 'your_warehouse'; # example warehouse for the mcp user: your_warehouse
 
 -- 1. Create the MCP user
 CREATE USER IDENTIFIER($mcp_username)
