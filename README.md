@@ -1,4 +1,4 @@
-# Snowflake MCP Server
+# General-Purpose Snowflake MCP Server
 
 A secure [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server that provides AI assistants with safe, efficient access to your Snowflake data warehouse. Execute SQL queries, analyze data, and get insights through natural language interactions.
 
