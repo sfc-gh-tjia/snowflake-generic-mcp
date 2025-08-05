@@ -1,0 +1,13 @@
+{
+    "mcpServers": {
+        "snowflake_operation": {
+            "command": "/opt/homebrew/bin/uv",
+            "args": [
+              "--directory",
+              "/path/to/your/snowflake-mcp-server",
+              "run",
+              "snowflake_mcp_server.py"
+            ]
+          }
+        }
+}
