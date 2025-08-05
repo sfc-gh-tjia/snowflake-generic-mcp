@@ -22,7 +22,7 @@ For more detail information and example usages, reference the [Blog](https://med
 ### 1. Install
 ```bash
 git clone https://github.com/uniquejtx/snowflake-generic-mcp.git
-cd snowflake-mcp-server
+cd snowflake-generic-mcp
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
