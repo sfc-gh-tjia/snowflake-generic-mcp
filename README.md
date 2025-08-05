@@ -2,7 +2,7 @@
 
 A secure [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server that provides AI assistants with safe, efficient access to your Snowflake data warehouse. Execute SQL queries, analyze data, and get insights through natural language interactions. 
 
-For more detail information and example usages, reference the [Blog](https://medium.com/@uniquejtx_3744/the-general-purpose-snowflake-mcp-server-sql-operation-through-natural-language-ddd33bba4fa7)
+For more detail information and example usages, reference the [Blog](https://medium.com/@uniquejtx_3744/the-general-purpose-snowflake-mcp-server-sql-operation-through-natural-language-ddd33bba4fa7).
 
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
