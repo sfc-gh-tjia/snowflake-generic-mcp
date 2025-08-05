@@ -84,7 +84,7 @@ openssl rsa -in rsa_key.p8 -pubout -out rsa_key.pub
 ALTER USER your_username SET RSA_PUBLIC_KEY='your-public-key-content';
 ```
 
-## Claude Desktop Integration
+## AI Tool Integration
 
 Connect the MCP server to your AI assistant for natural language database interactions.
 
