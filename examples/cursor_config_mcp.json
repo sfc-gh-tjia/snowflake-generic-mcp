@@ -4,7 +4,7 @@
             "command": "/opt/homebrew/bin/uv",
             "args": [
               "--directory",
-              "/path/to/your/snowflake-mcp-server",
+              "/path/to/your/snowflake-generic-mcp",
               "run",
               "snowflake_mcp_server.py"
             ]

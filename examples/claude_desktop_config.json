@@ -4,14 +4,14 @@
       "command": "/opt/homebrew/bin/uv",
       "args": [
         "--directory",
-        "/path/to/your/snowflake-mcp-server",
+        "/path/to/your/snowflake-generic-mcp",
         "run",
         "snowflake_mcp_server.py"
       ]
     },
     "snowflake-python-venv": {
-      "command": "/path/to/your/snowflake-mcp-server/venv/bin/python",
-      "args": ["/path/to/your/snowflake-mcp-server/snowflake_mcp_server.py"]
+      "command": "/path/to/your/snowflake-generic-mcp/venv/bin/python",
+      "args": ["/path/to/your/snowflake-generic-mcp/snowflake_mcp_server.py"]
     }
   }
 } 
